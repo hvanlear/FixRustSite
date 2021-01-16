@@ -11,13 +11,13 @@
 }
 
 h1 {
-  font-size: 7rem;
+  font-size: 10vw;
   font-family: "Poppins", sans-serif;
 }
 
 .daysCounter {
   font-family: "Poppins", sans-serif;
-  font-size: 3rem;
+  font-size: 4vw;
 }
 
 h1,
@@ -33,10 +33,11 @@ h1,
 .desc {
   margin-left: auto;
   margin-right: auto;
-  width: 40rem;
+  width: 70vw;
   font-family: system-ui;
-  margin-top: 2rem;
+  margin-top: 3vw;
   line-height: 1.3;
+  font-size: 4vw;
 }
 
 .IconTwitter {
@@ -55,7 +56,7 @@ h1,
 #days {
   transition: --num 5s;
   counter-set: num var(--num);
-  font: 800 4rem system-ui;
+  font: 800 7vw system-ui;
 }
 #days::after {
   content: counter(num);
