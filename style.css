@@ -55,6 +55,7 @@ h1,
 
 #days {
   -webkit-transition: --num 5s;
+  transition: --num 5s;
   counter-set: num var(--num);
   font: 800 7vw system-ui;
 }
