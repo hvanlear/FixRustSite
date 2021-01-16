@@ -1,0 +1,74 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  text-align: center;
+  margin-top: 3rem;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 7rem;
+  font-family: "Poppins", sans-serif;
+}
+
+.daysCounter {
+  font-family: "Poppins", sans-serif;
+  font-size: 3rem;
+}
+
+h1,
+.highlightRed,
+.daysCounter {
+  color: #dc483e;
+}
+
+.highlight {
+  color: black;
+}
+
+.desc {
+  margin-left: auto;
+  margin-right: auto;
+  width: 40rem;
+  font-family: system-ui;
+  margin-top: 2rem;
+  line-height: 1.3;
+}
+
+.IconTwitter {
+  position: relative;
+  top: 20vh;
+}
+
+/* Days Animation */
+
+@property --num {
+  syntax: "<integer>";
+  initial-value: 0;
+  inherits: false;
+}
+
+#days {
+  transition: --num 5s;
+  counter-set: num var(--num);
+  font: 800 4rem system-ui;
+}
+#days::after {
+  content: counter(num);
+}
+#days:hover {
+  --num: 100;
+}
+
+body {
+  margin: 2rem;
+}
+
+.icon {
+  margin-top: 3rem;
+  width: 2rem;
+}
