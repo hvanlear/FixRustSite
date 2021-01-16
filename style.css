@@ -54,15 +54,12 @@ h1,
 }
 
 #days {
-  transition: --num 5s;
+  -webkit-transition: --num 5s;
   counter-set: num var(--num);
   font: 800 7vw system-ui;
 }
 #days::after {
   content: counter(num);
-}
-#days:hover {
-  --num: 100;
 }
 
 body {
@@ -71,5 +68,5 @@ body {
 
 .icon {
   margin-top: 3rem;
-  width: 2rem;
+  width: 4rem;
 }
