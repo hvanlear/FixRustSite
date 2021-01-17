@@ -12,9 +12,28 @@ function daysBetween(startDate, endDate) {
   return (treatAsUTC(endDate) - treatAsUTC(startDate)) / millisecondsPerDay;
 }
 
-const genNumber = () => {
-  let days = daysBetween(BUG_INTRO_DATE, now);
-  document.querySelector("#days").style.setProperty("--num", Math.round(days));
-};
+//CSS property attribute not supported on FireFox or IOS
 
-setTimeout(genNumber);
+// const genNumber = () => {
+//   let days = daysBetween(BUG_INTRO_DATE, now);
+//   document.querySelector("#days").style.setProperty("--num", Math.round(days));
+// };
+
+// setTimeout(genNumber);
+
+function animateValue(obj, start, end, duration) {
+  let startTimestamp = null;
+  const step = (timestamp) => {
+    if (!startTimestamp) startTimestamp = timestamp;
+    const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+    obj.innerHTML = Math.floor(progress * (end - start) + start);
+    if (progress < 1) {
+      window.requestAnimationFrame(step);
+    }
+  };
+  window.requestAnimationFrame(step);
+}
+
+let numDays = daysBetween(BUG_INTRO_DATE, now);
+const obj = document.getElementById("days");
+animateValue(obj, 0, numDays, 5000);

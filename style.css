@@ -47,21 +47,21 @@ h1,
 
 /* Days Animation */
 
-@property --num {
+/* @property --num {
   syntax: "<integer>";
   initial-value: 0;
   inherits: false;
-}
+} */
 
 #days {
   -webkit-transition: --num 5s;
   transition: --num 5s;
   counter-set: num var(--num);
   font: 800 7vw system-ui;
-}
+/* }
 #days::after {
   content: counter(num);
-}
+} */
 
 body {
   margin: 2rem;
